@@ -248,7 +248,8 @@ button {
     margin-bottom: 1.5rem;
     color: var(--text-black);
 }
-.subh1{
+
+.subh1 {
     font-size: 40px;
 }
 
@@ -395,92 +396,95 @@ button {
 /* ============ SHOWCASE (BLUE SECTION) ============ */
 .showcase {
     background: var(--blue);
-    padding: 6rem 2rem;
+    padding: 8rem 2rem;
     margin-top: 0;
+    overflow-x: hidden;
 }
 
 .showcase-inner {
-    max-width: 1300px;
+    max-width: 1400px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4rem;
     align-items: center;
 }
 
-.showcase-image-group {
+/* 1. Photo Wrapper */
+.showcase-photo-wrapper {
     position: relative;
-}
-
-.showcase-main-img {
     width: 100%;
-    max-width: 500px;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
-}
-
-.showcase-stats-float {
-    position: absolute;
-    right: -30px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.stat-mini {
-    background: #fff;
-    border-radius: var(--radius);
-    padding: 0.8rem 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    box-shadow: var(--shadow-md);
-    min-width: 170px;
-}
-
-.stat-mini-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
+    height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.stat-mini-icon.blue {
-    background: #eff6ff;
+.showcase-green-bg {
+    position: absolute;
+    left: 0;
+    width: 85%;
+    height: 100%;
+    background: var(--green);
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
 }
 
-.stat-mini-icon.pink {
-    background: #fdf2f8;
+.showcase-green-text {
+    font-size: 15rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.15);
+    letter-spacing: -6px;
+    user-select: none;
+    pointer-events: none;
 }
 
-.stat-mini-label {
-    font-size: 0.65rem;
-    color: #94a3b8;
-    font-weight: 600;
-    text-transform: uppercase;
-    display: block;
-}
-
-.stat-mini-value {
-    font-size: 1.3rem;
-    font-weight: 800;
-    color: var(--text-black);
-    display: block;
-}
-
-.showcase-dashboard {
+.showcase-main-img {
     position: relative;
+    z-index: 2;
+    width: 95%;
+    height: 105%;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
+}
+
+/* 2. Stats Wrapper */
+.showcase-stats-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.showcase-stats-img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 16px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 3. Dashboard Wrapper */
+.showcase-dashboard-wrapper {
+    position: relative;
+    transform: translateX(15%);
+}
+
+.tablet-frame {
+    background: #1a1a1a;
+    padding: 12px;
+    border-radius: 32px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+    border: 2px solid #333;
 }
 
 .dashboard-img {
     width: 100%;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
-    border: 3px solid rgba(255, 255, 255, 0.15);
+    display: block;
+    border-radius: 22px;
 }
 
 /* ============ ERP / LMS TABS ============ */
@@ -1148,10 +1152,17 @@ button {
 
     .showcase-inner {
         grid-template-columns: 1fr;
+        gap: 3rem;
     }
 
-    .showcase-dashboard {
-        margin-top: 2rem;
+    .showcase-dashboard-wrapper {
+        transform: none;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .showcase-photo-wrapper {
+        height: 350px;
     }
 
     .footer-inner {
@@ -1288,14 +1299,26 @@ button {
     }
 
     .showcase {
-        padding: 3rem 1rem;
+        padding: 4rem 1.5rem;
     }
 
-    .showcase-stats-float {
-        position: static;
-        transform: none;
-        flex-direction: row;
-        margin-top: 1rem;
+    .showcase-stats-img {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .showcase-green-text {
+        font-size: 10rem;
+    }
+
+    .showcase-photo-wrapper {
+        height: 280px;
+    }
+
+    .tablet-frame {
+        padding: 8px;
+        border-radius: 20px;
     }
 
     .stakeholder-tabs {
